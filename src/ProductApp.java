@@ -18,13 +18,15 @@ public class ProductApp {
             sc.nextLine();  // discard any other data entered on the line
 
             // get the Product object
-            Product product = ProductDB.getProduct(productCode);
+//           Product product = ProductDB.getProduct(productCode);
+            ProductDB db = new ProductDB();
+            Product product = db.getProduct(productCode);
 
             // display the output
             System.out.println();
             System.out.println("SELECTED PRODUCT");
             System.out.println("Description: " + product.getDescription());
-            System.out.println("Price:       " + product.getPriceFormatted());
+            System.out.println("Price:       " + product.getPriceNumberFormatted());
             System.out.println();
 
             // see if the user wants to continue
